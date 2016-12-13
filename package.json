@@ -1,22 +1,22 @@
 {
-  "name": "Supply-chain-atomic-node-1",
-  "nomadName": "Supply-chain-atomic-node-1",
+  "name": "Solar Monitor SF IDEO",
+  "nomadName": "Solar Monitor SF IDEO",
   "version": "1.0.0",
-  "description": "Atmoic node one for the supply chain demo",
+  "description": "An atomic node that reports the power output of a solar panel in the IDEO SF office",
   "main": "sensor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/The-Chanman/nomad-supply-chain-demo/"
+    "url": "git+https://github.com/CRB404/SolarAtomicNode"
   },
   "author": "Eric Chan <echan@ideo.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/The-Chanman/nomad-supply-chain-demo/issues"
+    "url": "https://github.com/CRB404/SolarAtomicNode/issues"
   },
-  "homepage": "https://github.com/The-Chanman/nomad-supply-chain-demo#readme",
+  "homepage": "https://github.com/CRB404/SolarAtomicNode#readme",
   "dependencies": {
     "moment": "^2.16.0",
     "nomad-stream": "0.0.6",

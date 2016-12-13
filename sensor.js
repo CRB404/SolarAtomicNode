@@ -9,17 +9,17 @@ const nomad = new Nomad()
 
 // Particle Device Setup
 // Atomic node 1
-const deviceID = '430026001447343432313031'
+const deviceID = '340050000851353531343431'
 
 let instance = null
 let lastPub = null
 let token
 
-const defaultPublishData = { 
-  sensor: {
+const defaultPublishData = {
+  solar_output: {
     data: "",
     time: "",
-    description: "The state of the machine in region 1"
+    description: "Solar Panel in the IDEO SF Studio"
   }
 }
 const timeBetween = 5 * 60 * 1000 //30 seconds
@@ -72,7 +72,7 @@ particle.login(credentials)
   })
   .then((n) => {
     instance = n
-    return instance.publishRoot('hello this atomic node 1 of supply chain demo')
+    return instance.publishRoot('Hello this is a node monitoring solar output at the IDEO SF studio')
   })
   .then(() => {
     //declaring last publish date
@@ -87,7 +87,7 @@ particle.login(credentials)
       catch(err){
         console.log("DataMaintainer failed with error of " + err)
       }
-      // this determines frequency of transmission 
+      // this determines frequency of transmission
       let currentTime = getTime()
       let timeSince = currentTime - lastPub
       if (timeSince >= timeBetween){
@@ -102,7 +102,7 @@ particle.login(credentials)
 
           instance.publish(dataManager.toString())
             .catch(err => console.log(`Error: ${JSON.stringify(err)}`))
-          dataManager.clear()  
+          dataManager.clear()
           lastPub = currentTime
         }
       }
@@ -114,7 +114,7 @@ particle.login(credentials)
         console.log("***************************************************************************************")
         console.log(dataManager.getAll())
         console.log("***************************************************************************************")
-        dataManager.clear()  
+        dataManager.clear()
         lastPub = currentTime
       }
     })
